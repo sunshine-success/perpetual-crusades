@@ -10,7 +10,7 @@ const Footer = () => {
         </span>{" "}
         by{" "}
         <a style={{ color: "white" }} href="https://www.adityavsingh.com/">
-          Aditya Vikram Singh
+          Sunshine
         </a>
         , 2020
       </h5>
