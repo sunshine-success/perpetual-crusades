@@ -1,0 +1,9 @@
+{
+  "short_name": "Perpetual Crusades",
+  "name": "Perpetual Crusades",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#226ce0",
+  "background_color": "#ffffff"
+}
