@@ -1,4 +1,41 @@
 import React, { Component } from "react";
+import {
+  AncientWizard,
+  BanefulBlueDragon,
+  FieryRedDragon,
+  MightyKnight,
+  NoxiousGreenDragon,
+  StealthyRogue,
+
+  TilesAncientWizard,
+  TilesBanefulBlueDragon,
+  TilesFieldsofDestiny,
+  TilesFieryRedDragon,
+  TilesMightyKnight,
+  TilesMythicKingdomofFriendship,
+  TilesNoxiousGreenDragon,
+  TilesStealthyRogue,
+} from "../assets";
+
+const characterComponents = {
+  "Baneful Blue Dragon": BanefulBlueDragon,
+  "Fiery Red Dragon": FieryRedDragon,
+  "Noxious Green Dragon": NoxiousGreenDragon,
+  "Ancient Wizard": AncientWizard,
+  "Mighty Knight": MightyKnight,
+  "Stealthy Rogue": StealthyRogue,
+};
+
+const tilesComponents = {
+  "Mythic Kingdom of Friendship": TilesMythicKingdomofFriendship,
+  "Ancient Wizard": TilesAncientWizard,
+  "Mighty Knight": TilesMightyKnight,
+  "Stealthy Rogue": TilesStealthyRogue,
+  "Baneful Blue Dragon": TilesBanefulBlueDragon,
+  "Fiery Red Dragon": TilesFieryRedDragon,
+  "Noxious Green Dragon": TilesNoxiousGreenDragon,
+  "Fields of Destiny": TilesFieldsofDestiny,
+};
 
 class Instructions extends Component {
   state = {
@@ -30,11 +67,11 @@ class Instructions extends Component {
       return null;
     }
     return (
-      <div class="instructions">
+      <div className="instructions">
         <h2 style={{ textAlign: "center" }}>Game Instructions</h2>
         <br />
         <br />
-        <div class="content">
+        <div className="content">
           <ul
             style={{
               textAlign: "center",
@@ -42,15 +79,19 @@ class Instructions extends Component {
               alignItems: "center",
             }}
           >
-            {this.state.characters.map((character) => (
-              <img
-                className="character"
-                src={`./characters/${character}.png`}
-                width="75px"
-                height="auto"
-                alt={character}
-              />
-            ))}
+            {this.state.characters.map((character) => {
+              const CharacterComponent = characterComponents[character];
+              return (
+                <img
+                  className="character"
+                  src={CharacterComponent}
+                  width="75px"
+                  height="auto"
+                  alt={character}
+                />
+              )
+            }
+            )}
           </ul>
           <ul
             style={{
@@ -59,15 +100,19 @@ class Instructions extends Component {
               alignItems: "center",
             }}
           >
-            {this.state.tiles.map((tile) => (
-              <img
-                className="character"
-                src={`./tiles/${tile}.jpg`}
-                width="75px"
-                height="auto"
-                alt={tile}
-              />
-            ))}
+            {this.state.tiles.map((tile) => {
+              const TilesComponent = tilesComponents[tile];
+              return (
+                <img
+                  className="character"
+                  src={TilesComponent}
+                  width="75px"
+                  height="auto"
+                  alt={tile}
+                />
+              );
+            }
+            )}
           </ul>
           <ul>
             <li>The first player chooses a Humanoid character.</li>
@@ -103,7 +148,7 @@ class Instructions extends Component {
         <br />
         <br />
         <div>
-          <button class="inverted-button" onClick={this.onClose}>
+          <button className="inverted-button" onClick={this.onClose}>
             Close Instructions
           </button>
         </div>

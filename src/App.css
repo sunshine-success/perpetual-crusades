@@ -181,7 +181,7 @@ game-tile::before {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 88vh;
+  height: 120vh;
   background: white;
   border: 1px solid #ccc;
   padding: 0;

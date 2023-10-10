@@ -1,5 +1,22 @@
 import React, { Component, Fragment } from "react";
 import PlayersDisplay from "../components/PlayersDisplay";
+import { 
+  AncientWizard, 
+  BanefulBlueDragon,
+  FieryRedDragon,
+  MightyKnight,
+  NoxiousGreenDragon,
+  StealthyRogue
+} from "../assets";
+
+const characterComponents = {
+  "Baneful Blue Dragon": BanefulBlueDragon,
+  "Fiery Red Dragon": FieryRedDragon,
+  "Noxious Green Dragon": NoxiousGreenDragon,
+  "Ancient Wizard": AncientWizard,
+  "Mighty Knight": MightyKnight,
+  "Stealthy Rogue": StealthyRogue,
+};
 
 class CharacterSelection extends Component {
   state = {
@@ -7,7 +24,7 @@ class CharacterSelection extends Component {
       Dragon: [
         "Baneful Blue Dragon",
         "Fiery Red Dragon",
-        "Noxious Green Dragon",
+        "Noxious Green Dragon" 
       ],
       Humanoid: ["Ancient Wizard", "Mighty Knight", "Stealthy Rogue"],
     },
@@ -56,21 +73,24 @@ class CharacterSelection extends Component {
             </h1>
             {this.state.characters[
               this.getPlayerRace(this.state.currentPlayerNumber)
-            ].map((character) => (
-              <button
+            ].map((character) => {
+              const CharacterComponent = characterComponents[character];
+              return (<button
                 className="character"
                 onClick={() => this.setPlayer(character)}
                 style={{ textDecoration: "none" }}
                 key={character}
-              >
+                >
                 <img
                   className="character-image"
-                  src={`./characters/${character}.png`}
+                  src={CharacterComponent}
                   alt={character}
-                />
+                  />
                 <div style={{ textAlign: "center" }}>{character}</div>
               </button>
-            ))}
+            )
+          }
+            )}
           </Fragment>
         )}
       </div>
