@@ -79,18 +79,6 @@ class Instructions extends Component {
               alignItems: "center",
             }}
           >
-<<<<<<< HEAD
-            {this.state.characters.map((character) => (
-              <h1>asdfasdf</h1>
-              // <img
-              //   className="character"
-              //   src={`./characters/${character}.png`}
-              //   width="75px"
-              //   height="auto"
-              //   alt={character}
-              // />
-            ))}
-=======
             {this.state.characters.map((character) => {
               const CharacterComponent = characterComponents[character];
               return (
@@ -104,7 +92,6 @@ class Instructions extends Component {
               )
             }
             )}
->>>>>>> staging
           </ul>
           <ul
             style={{
@@ -113,18 +100,6 @@ class Instructions extends Component {
               alignItems: "center",
             }}
           >
-<<<<<<< HEAD
-            {this.state.tiles.map((tile) => (
-              <h1>dfdfdfd</h1>
-              // <img
-              //   className="character"
-              //   src={`./tiles/${tile}.jpg`}
-              //   width="75px"
-              //   height="auto"
-              //   alt={tile}
-              // />
-            ))}
-=======
             {this.state.tiles.map((tile) => {
               const TilesComponent = tilesComponents[tile];
               return (
@@ -138,7 +113,6 @@ class Instructions extends Component {
               );
             }
             )}
->>>>>>> staging
           </ul>
           <ul>
             <li>The first player chooses a Humanoid character.</li>
