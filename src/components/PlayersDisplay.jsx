@@ -1,4 +1,21 @@
 import React from "react";
+import {
+  AncientWizard,
+  BanefulBlueDragon,
+  FieryRedDragon,
+  MightyKnight,
+  NoxiousGreenDragon,
+  StealthyRogue,
+} from "../assets";
+
+const characterComponents = {
+  "Baneful Blue Dragon": BanefulBlueDragon,
+  "Fiery Red Dragon": FieryRedDragon,
+  "Noxious Green Dragon": NoxiousGreenDragon,
+  "Ancient Wizard": AncientWizard,
+  "Mighty Knight": MightyKnight,
+  "Stealthy Rogue": StealthyRogue,
+};
 
 const PlayersDisplay = ({ players, getPlayerRace, onIntroScreen }) => (
   <div className="players">
@@ -14,7 +31,7 @@ const PlayersDisplay = ({ players, getPlayerRace, onIntroScreen }) => (
           >
             {/* <img
               className="character-image"
-              src={`./characters/${player.character}.png`}
+              src={characterComponents[player.character]}
               alt={player.character}
             /> */}
             <div style={{ textAlign: "center", fontFamily: "Space Mono" }}>
@@ -29,7 +46,7 @@ const PlayersDisplay = ({ players, getPlayerRace, onIntroScreen }) => (
           >
             {/* <img
               className="character-image"
-              src={`./characters/${player.character}.png`}
+              src={characterComponents[player.character]}
               alt={player.character}
             /> */}
             <div style={{ textAlign: "center", fontFamily: "Space Mono" }}>

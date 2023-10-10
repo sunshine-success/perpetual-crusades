@@ -1,0 +1,1 @@
+export { default as AncientWizard } from "./characters/Ancient Wizard.png";

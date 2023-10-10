@@ -79,7 +79,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <div class="header">
+        <div className="header">
           <button
             onClick={(event) => {
               this.toggleInstruction(event);

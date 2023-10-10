@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div class="footer">
+    <div className="footer">
       <h5>
         Created with{" "}
         <span role="img" aria-label="heart">
@@ -10,7 +10,7 @@ const Footer = () => {
         </span>{" "}
         by{" "}
         <a style={{ color: "white" }} href="https://www.adityavsingh.com/">
-          Aditya Vikram Singh
+          Sunshine
         </a>
         , 2020
       </h5>

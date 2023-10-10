@@ -1,4 +1,52 @@
 import React, { Component } from "react";
+import {
+  AncientWizard,
+  BanefulBlueDragon,
+  FieryRedDragon,
+  MightyKnight,
+  NoxiousGreenDragon,
+  StealthyRogue,
+
+  dice1,
+  dice2,
+  dice3,
+  dice4,
+  dice5,
+  dice6,
+
+  TilesAncientWizard,
+  TilesBanefulBlueDragon,
+  TilesFieldsofDestiny,
+  TilesFieryRedDragon,
+  TilesMightyKnight,
+  TilesMythicKingdomofFriendship,
+  TilesNoxiousGreenDragon,
+  TilesStealthyRogue,
+} from "../assets";
+
+const characterComponents = {
+  "Baneful Blue Dragon": BanefulBlueDragon,
+  "Fiery Red Dragon": FieryRedDragon,
+  "Noxious Green Dragon": NoxiousGreenDragon,
+  "Ancient Wizard": AncientWizard,
+  "Mighty Knight": MightyKnight,
+  "Stealthy Rogue": StealthyRogue,
+};
+
+const diceComponents = [
+  dice1, dice2, dice3, dice4, dice5, dice6
+];
+
+const tilesComponents = {
+  "Mythic Kingdom of Friendship": TilesMythicKingdomofFriendship,
+  "Ancient Wizard": TilesAncientWizard,
+  "Mighty Knight": TilesMightyKnight,
+  "Stealthy Rogue": TilesStealthyRogue,
+  "Baneful Blue Dragon": TilesBanefulBlueDragon,
+  "Fiery Red Dragon": TilesFieryRedDragon,
+  "Noxious Green Dragon": TilesNoxiousGreenDragon,
+  "Fields of Destiny": TilesFieldsofDestiny,
+};
 
 class GameBoard extends Component {
   state = {
@@ -49,8 +97,8 @@ class GameBoard extends Component {
         index % 3 === 0
           ? "Fields of Destiny"
           : index % 3 === 1
-          ? Humanoid.character
-          : Dragon.character;
+            ? Humanoid.character
+            : Dragon.character;
 
       // Finally push the new tile to array of tiles
       tiles.push(tile);
@@ -109,11 +157,11 @@ class GameBoard extends Component {
             key={index}
           >
             {tile.type !== "Start" ? (
-              <img alt={tile.type} src={`./tiles/${tile.type}.jpg`} />
+              <img alt={tile.type} src={tilesComponents[tile.type]} />
             ) : (
               <img
                 alt="Start"
-                src={"./tiles/Mythic Kingdom of Friendship.jpg"}
+                src={TilesMythicKingdomofFriendship}
               />
             )}
           </div>
@@ -133,7 +181,7 @@ class GameBoard extends Component {
               <img
                 className="character-image"
                 alt={player.number}
-                src={`./characters/${player.character}.png`}
+                src={characterComponents[player.character]}
               />
             </div>
           );
@@ -172,7 +220,7 @@ class GameBoard extends Component {
             >
               <img
                 className="character-image"
-                src={`./characters/${this.props.tile.player.character}.png`}
+                src={characterComponents[this.props.tile.player.character]}
                 alt={this.props.tile.player.character}
               />
               <h3>{this.props.tile.player.character} won!</h3>
@@ -183,7 +231,7 @@ class GameBoard extends Component {
               {this.state.diceDisplay ? (
                 <img
                   className="dice-thrown"
-                  src={`./dice/${this.state.diceDisplay}.png`}
+                  src={diceComponents[this.state.diceDisplay - 1]}
                   alt={this.state.diceDisplay}
                 />
               ) : (
