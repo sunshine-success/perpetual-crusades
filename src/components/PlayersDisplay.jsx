@@ -12,11 +12,11 @@ const PlayersDisplay = ({ players, getPlayerRace, onIntroScreen }) => (
             className="character character-display"
             style={{ textDecoration: "none" }}
           >
-            <img
+            {/* <img
               className="character-image"
               src={`./characters/${player.character}.png`}
               alt={player.character}
-            />
+            /> */}
             <div style={{ textAlign: "center", fontFamily: "Space Mono" }}>
               {player.character}
             </div>
@@ -27,11 +27,11 @@ const PlayersDisplay = ({ players, getPlayerRace, onIntroScreen }) => (
             className="character character-intro"
             style={{ textDecoration: "none" }}
           >
-            <img
+            {/* <img
               className="character-image"
               src={`./characters/${player.character}.png`}
               alt={player.character}
-            />
+            /> */}
             <div style={{ textAlign: "center", fontFamily: "Space Mono" }}>
               {player.character}
             </div>

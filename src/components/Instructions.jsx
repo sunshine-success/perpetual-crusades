@@ -43,13 +43,14 @@ class Instructions extends Component {
             }}
           >
             {this.state.characters.map((character) => (
-              <img
-                className="character"
-                src={`./characters/${character}.png`}
-                width="75px"
-                height="auto"
-                alt={character}
-              />
+              <h1>asdfasdf</h1>
+              // <img
+              //   className="character"
+              //   src={`./characters/${character}.png`}
+              //   width="75px"
+              //   height="auto"
+              //   alt={character}
+              // />
             ))}
           </ul>
           <ul
@@ -60,13 +61,14 @@ class Instructions extends Component {
             }}
           >
             {this.state.tiles.map((tile) => (
-              <img
-                className="character"
-                src={`./tiles/${tile}.jpg`}
-                width="75px"
-                height="auto"
-                alt={tile}
-              />
+              <h1>dfdfdfd</h1>
+              // <img
+              //   className="character"
+              //   src={`./tiles/${tile}.jpg`}
+              //   width="75px"
+              //   height="auto"
+              //   alt={tile}
+              // />
             ))}
           </ul>
           <ul>
